@@ -6,6 +6,9 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) =>{
     const [productos, setProductos] = useState([])
+    
+    // CONTEXTO PARA EL CARRITO
+    const [menu, setMenu] = useState(false);
 
     useEffect(() =>{
         const producto = data.items
@@ -17,7 +20,8 @@ export const DataProvider = (props) =>{
     },[])
 
     const value = {
-        productos : [productos]
+        productos : [productos],
+        menu : [menu, {setMenu}]
     }
 
     return (
