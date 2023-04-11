@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Card from "../images/img02.jpg";
 import { DataContext } from "../context/DataProvider";
 import Nike from "../images/Nike.jpg";
 
