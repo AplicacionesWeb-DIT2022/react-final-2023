@@ -1,0 +1,23 @@
+import React from "react";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
+
+import { Inicio } from "./Inicio/index";
+import { ProductosLista } from "./Productos/index";
+import { ProductosDetalles } from "./Productos/ProductosDetalles";
+
+import { Lugares } from "./Lugares/index";
+import { Contacto } from "./Contacto/index";
+
+export const Paginas = () => {
+  return (
+    <section>
+      <Switch>
+        <Route path="/" exact component={ Inicio } />
+        <Route path="/productos" exact component={ ProductosLista } />
+        <Route path="/productos/:id" exact component={ ProductosDetalles } />
+        <Route path="/lugares" exact component={ Lugares } />
+        <Route path="/contacto" exact component={ Contacto } />
+      </Switch>
+    </section>
+  )
+}
