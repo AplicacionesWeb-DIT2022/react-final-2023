@@ -1,17 +1,11 @@
 import React, { createContext, useState, useEffect } from "react";
 import Data from "../Data.js";
-import axios from 'axios'; // Importa la librería axios
 
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {
 	// const url = 'https://bakend-final-libre-conti.herokuapp.com/api/producto';
 	// const url2 = 'https://bakend-final-libre-conti.herokuapp.com/api/lugare';
-	
-
-	const [data, setData] = useState(null);
-
-
 	const [productos, setProductos] = useState([]);
 	const [menu, setMenu] = useState(false)
 	const [carrito, setCarrito] =useState([])
@@ -68,23 +62,6 @@ export const DataProvider = (props) => {
 		addCarrito: addCarrito,
 		total: [total, setTotal]
 	}
-
-
-
-
-
-
-	useEffect(() => {
-		// Realizar una solicitud GET a una API usando Axios
-		axios.get('https://bakend-final-libre-conti.herokuapp.com/api/lugare')
-		  .then(response => {
-			setData(response.data);
-			console.log(response.data)
-		})
-		  .catch(error => {
-			console.error('Error al obtener los datos:', error);
-		  });
-	  }, []);
 
 	return (
 		<DataContext.Provider value={value}>

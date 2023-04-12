@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import PuntoVenta from "../images/Punto-de-Venta.png";
-import Button from 'react-bootstrap/Button';
+import { Lugares } from "./Lugares";
 
-export const Lugares = () => {
+export const LugaresList = () => {
   const [datos, setDatos] = useState([]); // Estado para almacenar los datos de la API
 
   useEffect(() => {
@@ -28,34 +26,19 @@ export const Lugares = () => {
 
   return (
     <div>
-      <div className='productos'> 
-      {datos.map(dato => (<>
-        {/* <div className='productos'>         */}
-        <Card style={{ width: '28rem' }}>
-            <Card.Img variant="top" src={ PuntoVenta } width="100" height="250"  />
-            <Card.Body>
-            <Card.Title> Sucursal {dato.nombre} </Card.Title>
-            <Card.Text>
-              <p>
-                Direccion: { dato.direccion} 
-              </p>
-              <p>
-                Ciudad: {dato.ciudad}
-              </p>
-              <p>
-                CP: { dato.CP}.
-              </p>
-            </Card.Text>
-            <a href='/lugares'>
-            <Button variant="primary"> Proximamente.. Ver Ubicacion </Button>
-            </a>
-            </Card.Body>
-        </Card>
-        </>
+      <p>f</p>
+      <p>f</p>
+      <p>f</p>
+      <p>f</p>
+      <p>f</p>
+      <p>f</p>
+      <p>f</p>
+      <p>f</p>
+      {datos.map(dato => (
+        <p key={dato.id}>{dato.nombre}</p>
       ))}
     </div>
-  </div>
   );
 };
 
-export default Lugares;
+export default LugaresList;

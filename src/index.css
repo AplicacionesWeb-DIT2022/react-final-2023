@@ -46,7 +46,7 @@ header{
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    position: fixed;
+    position: relative;
     box-sizing: border-box ;
     background-color: white;
     box-shadow: 0 10px 10px #08a05c50;

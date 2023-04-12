@@ -5,9 +5,6 @@ export const Contacto = () => {
   return (
     <>
       <div className= "producto">
-        <p> . </p>
-        <p> . </p>
-        <p> . </p>
       <div className="col">
           <img src={ Nike } alt="Nike" width="250" height="250"/>
       </div>
