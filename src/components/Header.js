@@ -3,6 +3,12 @@ import { DataContext } from "../context/DataProvider";
 import { Link } from "react-router-dom";
 import Nike from "../images/Nike.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UseAnimations from "react-useanimations";
+import airplay from "react-useanimations/lib/airplay";
+import home from "react-useanimations/lib/home";
+import infinity from "react-useanimations/lib/infinity";
+import codepen from "react-useanimations/lib/codepen";
+
 
 export const Header = () => {
   const value = useContext(DataContext);
@@ -27,16 +33,16 @@ export const Header = () => {
       </Link>
       <ul>
         <li>
-          <Link to="/"> Inicio </Link>
+          <Link to="/"> <UseAnimations animation={ home } size={60}/> Inicio </Link>
         </li>
         <li>
-          <Link to="/productos"> Productos </Link>
+          <Link to="/productos"> <UseAnimations animation={airplay} size={60}/>   Productos </Link>
         </li>
         <li>
-          <Link to="/lugares"> Sucursales </Link>
+          <Link to="/lugares"> <UseAnimations animation={ codepen } size={60}/> Sucursales </Link>
         </li>
         <li>
-          <Link to="/contacto"> Contacto </Link>
+          <Link to="/contacto"> <UseAnimations animation={ infinity } size={60}/> Contacto </Link>
         </li>
         
       </ul>

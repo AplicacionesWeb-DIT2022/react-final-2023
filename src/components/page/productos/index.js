@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { DataContext } from "../../../context/DataProvider";
 import { ProductoItem } from "./ProductoItem";
+import { sinimagen } from "../../../images/sinimagen.png";
 
 export const ProductosList = () => {
 	const [datos, setDatos] = useState([]); // Estado para almacenar los datos de la API
@@ -15,28 +16,18 @@ export const ProductosList = () => {
 			if (respuesta.ok) { // Verificar si la respuesta es exitosa
 			  const datosJson = await respuesta.json(); // Convertir la respuesta a JSON
 			  setDatos(datosJson.productos); // Actualizar el estado con los datos de la API
-			  console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"); 
 			  console.log(datosJson.productos)
-			  // console.log()
 			} else {
-			  throw new Error('Error al obtener datos de la API'); // Manejar errores de respuesta
+			  throw new Error('Error al obtener datos de la API');
 			}
 		  } catch (error) {
-			console.error(error); // Manejar errores de conexión o parsing de JSON
-		  }
+			console.error(error);
+		}
 		};
 	
-		obtenerDatosDeAPI(); // Llamar a la función para obtener los datos de la API al montar el componente
-	  }, []); // El arreglo vacío [] como segundo argumento de useEffect hace que se ejecute solo una vez al montar el componente
-	
-
-
-    return (<>
-
-
-
-
-	
+		obtenerDatosDeAPI();
+	  }, []); 
+    return (<>	
         <div className="productos">
         {
 			datos.map(producto =>(
@@ -44,8 +35,8 @@ export const ProductosList = () => {
 					key={producto.id}
 					descripcion={producto.descripcion}
 					image={producto.image}
-					category={producto.category}
-					price={producto.price}
+					tipo={producto.tipo}
+					precio={producto.precio}
 					id={producto.id}
 				/>
 			))

@@ -1,6 +1,12 @@
 import React, { useContext } from "react";
 import { DataContext } from "../context/DataProvider";
 import Nike from "../images/Nike.jpg";
+import UseAnimations from "react-useanimations";
+import trash2 from 'react-useanimations/lib/trash2';
+import error from 'react-useanimations/lib/error';
+import arrowDown from 'react-useanimations/lib/arrowDown';
+import arrowUp from 'react-useanimations/lib/arrowUp';
+import archive from 'react-useanimations/lib/archive';
 
 export const Carrito = () => {
   const value = useContext(DataContext);
@@ -44,7 +50,7 @@ export const Carrito = () => {
     <div className={show1}>
       <div className={show2}>
         <div onClick={tooglefalse} className="carrito__close">
-          <box-icon name="x"></box-icon>
+          <UseAnimations animation={error} size={50}/>
         </div>
 		<div>
           <img src={ Nike } alt="logo" width="120"/>
@@ -54,30 +60,33 @@ export const Carrito = () => {
 			carrito.length === 0 ? <h2 style={{textAlign: "center", fontSize: "3rem"}}>Carrito Vacio</h2> :<>{
 				carrito.map((producto) => (
             <div className="carrito__item" key={producto.id}>
-              <img src={producto.image} alt={producto.title} />
+              <img src={producto.image} alt={producto.descripcion} />
               <div>
-                <h3> {producto.title} </h3>
-                <p className="price">${producto.price}</p>
+                <h3> {producto.descripcion} </h3>
+                <p className="price">${producto.precio}</p>
               </div>
               <div>
-				<box-icon onClick={() => increase(producto.id)} name="up-arrow" type="solid"/>
+              <UseAnimations animation={arrowUp} size={50} onClick={() => increase(producto.id)} name="up-arrow" type="solid"/>
+				{/* <box-icon onClick={() => increase(producto.id)} name="up-arrow" type="solid"/> */}
                 <p className="cantidad">{producto.cantidad}</p>
-				<box-icon onClick={() => reduce(producto.id)} name="down-arrow" type="solid" />
+
+        <UseAnimations animation={arrowDown} size={50} onClick={() => reduce(producto.id)} name="down-arrow" type="solid"/>
+        {/* <box-icon onClick={() => reduce(producto.id)} name="down-arrow" type="solid" /> */}
               </div>
 				<div onClick={() => removeProducto(producto.id)} className="remove__item">
-                <box-icon name="trash" />
-              </div>
-            </div>
+          <UseAnimations animation={trash2} size={50}/>
+        </div>
+    </div>
 ))
 }</>
 }
 	</div>
 		<div className="carrito__footer">
           <h3>Total: ${total}</h3>
-          <button className="btn">Payment</button>
+          <button className="btn"> Finalizar Pedido</button>
         </div>
 		<div className="carrito__close">
-          <button className="btn btn-outline-info"> Exportar pedido</button>
+          <button className="btn btn-outline-info"> {<UseAnimations animation={archive} size={50}/>} Exportar pedido</button>
         </div>
       </div>
     </div>
