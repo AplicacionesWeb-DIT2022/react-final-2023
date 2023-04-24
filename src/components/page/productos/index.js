@@ -34,13 +34,13 @@ export const ProductosList = () => {
 				<ProductoItem 
 					key={producto.id}
 					descripcion={producto.descripcion}
-					image={producto.image}
+					// image={producto.image}
 					tipo={producto.tipo}
 					precio={producto.precio}
 					id={producto.id}
 				/>
-			))
-		}					
+				))
+			}					
         </div>
 		</>
     )

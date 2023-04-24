@@ -1,12 +1,9 @@
 import React, { createContext, useState, useEffect } from "react";
-// import Data from "../Data.js";
 
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {
-	// const url = 'https://bakend-final-libre-conti.herokuapp.com/api/producto';
 	const [productos, setProductos] = useState([]);
-
 	const [menu, setMenu] = useState(false)
 	const [carrito, setCarrito] =useState([])
 	const [total, setTotal] = useState(0)
@@ -15,11 +12,16 @@ export const DataProvider = (props) => {
 		const obtenerDatosDeAPI = async () => {
 		  try {
 			const respuesta = await fetch('https://bakend-final-libre-conti.herokuapp.com/api/producto'); // Hacer la petición a la API
+			// const respuesta2 = fetch('https://bakend-final-libre-conti.herokuapp.com/api/lugare'); // Hacer la petición a la API
+  // const datosJson = await respuesta.json(); // Convertir la respuesta a JSON
+  			// console.log(respuesta2);
+  			// console.log(respuesta);
+
+			// const respuesta = await fetch('https://bakend-final-libre-conti.herokuapp.com/api/lugare'); // Hacer la petición a la API
+			
 			if (respuesta.ok) { // Verificar si la respuesta es exitosa
 			  const datosJson = await respuesta.json(); // Convertir la respuesta a JSON
 			  setProductos(datosJson.productos); // Actualizar el estado con los datos de la API
-			  console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX") 
-			  console.log(datosJson.productos)
 			  // console.log()
 			} else {
 			  throw new Error('Error al obtener datos de la API'); // Manejar errores de respuesta
@@ -31,15 +33,6 @@ export const DataProvider = (props) => {
 		obtenerDatosDeAPI(); // Llamar a la función para obtener los datos de la API al montar el componente
 	  }, []); // El arreglo vacío [] como segundo argumento de useEffect hace que se ejecute solo una vez al montar el componente
 	
-//   useEffect(() => {
-// 		const producto = Data.items 
-// 		if(producto){
-// 			setProductos(producto)
-// 		}else{
-// 			setProductos([])
-// 		}
-// 	}, []);
-
 	const addCarrito = (id) =>{
 		const check = carrito.every(item =>{
 			return item.id !== id

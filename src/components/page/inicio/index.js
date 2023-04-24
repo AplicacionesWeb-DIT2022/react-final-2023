@@ -11,10 +11,12 @@ import ProductosIng from "../../../images/ProductosImg.png";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
+// import deploy from '../../../images/deploy-react-app-heroku.jpg';
 
 export default function Inicio() {
     return (
         <div className="inicio">
+        <h2>Tienda Online</h2>
         <Carousel>
         <Carousel.Item>
             <img class="d-block w-100" src={ Carrousel3 } alt="1 slide"/>

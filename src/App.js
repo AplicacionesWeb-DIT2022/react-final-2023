@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { DataProvider } from './context/DataProvider';
 import { BrowserRouter as Router} from "react-router-dom";
 import Pages from "./components/Page.js";
+
 import "boxicons";
 
 function App() {
@@ -13,10 +14,10 @@ function App() {
     <DataProvider>
     <div className="App">
       <Router>
-      <Header />
-      <Carrito />
-      <Pages />
-      <Footer />
+        <Header />
+        <Carrito />  
+        <Pages />
+        <Footer />
       </Router>
     </div>
     </DataProvider>

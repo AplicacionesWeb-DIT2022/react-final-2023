@@ -2,8 +2,9 @@ import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../../context/DataProvider";
 
-export const ProductoItem = ({descripcion, image, tipo, precio, id, media}) => {
+export const ProductoItem = ({descripcion, tipo, precio, id}) => {
 
+  // const ruta = 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Hola.jpg';
   const value = useContext(DataContext);
   const addCarrito = value.addCarrito;
 
@@ -11,12 +12,12 @@ export const ProductoItem = ({descripcion, image, tipo, precio, id, media}) => {
     <div key={id} className="producto">
       <Link to={`/producto/${id}`}>
       <div className="producto__img">
-        <img src={image} alt={descripcion} />
+        <img src={tipo} alt={descripcion} />
       </div>
       </Link>
       <div className="producto__footer">
         <h1>{descripcion}</h1>
-        <p>{tipo}</p>
+        {/* <p>{tipo}</p> */}
         <p className="price">${precio} </p>
       </div>
       <div className="bottom">

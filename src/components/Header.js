@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Nike from "../images/Nike.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UseAnimations from "react-useanimations";
-import airplay from "react-useanimations/lib/airplay";
+import archive from "react-useanimations/lib/archive";
 import home from "react-useanimations/lib/home";
-import infinity from "react-useanimations/lib/infinity";
+import instagram from "react-useanimations/lib/instagram";
 import codepen from "react-useanimations/lib/codepen";
 
 
@@ -28,21 +28,29 @@ export const Header = () => {
       </div>
       <Link to="/">
       <div className="logo">
-        <img src={ Nike } alt="Nike" width="150" />
+        <img src={ Nike } alt="Nike" width="200" />
       </div>
       </Link>
       <ul>
         <li>
-          <Link to="/"> <UseAnimations animation={ home } size={60}/> Inicio </Link>
+          <h3>
+            <Link to="/"> <strong>Inicio</strong> </Link>
+          </h3>
         </li>
         <li>
-          <Link to="/productos"> <UseAnimations animation={airplay} size={60}/>   Productos </Link>
+        <h3>
+          <Link to="/productos"> <strong>Productos</strong> </Link>
+          </h3>
         </li>
         <li>
-          <Link to="/lugares"> <UseAnimations animation={ codepen } size={60}/> Sucursales </Link>
+        <h3>
+          <Link to="/lugares"> <strong>Sucursales</strong> </Link>
+        </h3>
         </li>
         <li>
-          <Link to="/contacto"> <UseAnimations animation={ infinity } size={60}/> Contacto </Link>
+        <h3>
+          <Link to="/contacto"> <strong>Contacto</strong> </Link>
+          </h3>
         </li>
         
       </ul>
