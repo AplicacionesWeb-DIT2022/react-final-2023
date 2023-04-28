@@ -28,13 +28,11 @@ export const ProductosList = () => {
 		obtenerDatosDeAPI();
 	  }, []); 
     return (<>	
-        <div className="productos">
-        {
+        <div className="productos">{
 			datos.map(producto =>(
 				<ProductoItem 
 					key={producto.id}
 					descripcion={producto.descripcion}
-					// image={producto.image}
 					tipo={producto.tipo}
 					precio={producto.precio}
 					id={producto.id}

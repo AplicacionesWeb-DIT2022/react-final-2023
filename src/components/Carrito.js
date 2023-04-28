@@ -7,6 +7,7 @@ import error from 'react-useanimations/lib/error';
 import arrowDown from 'react-useanimations/lib/arrowDown';
 import arrowUp from 'react-useanimations/lib/arrowUp';
 import archive from 'react-useanimations/lib/archive';
+import carritox from '../images/carritox.png';
 
 import jsPDF from 'jspdf';
 
@@ -71,6 +72,7 @@ export const Carrito = () => {
         </div>
         
         <h2> Simulador de Pedido - Carrito de Compras</h2>
+        <hr></hr>
         <div className="carrito__center">{
           carrito.length === 0 ? <h2 style={{textAlign: "center", fontSize: "3rem"}}>Carrito Vacio</h2> :<>{
             carrito.map((producto) => (
@@ -95,15 +97,16 @@ export const Carrito = () => {
             }</>
           }
 	      </div>
-  
+        <hr></hr>
         <div className="carrito__footer">
-            <h3> <UseAnimations animation={archive} size={50}/> Total: ${total}</h3>
+            <h3> Total: ${total}</h3>
             {/* <UseAnimations animation={archive} size={50}/> */}
             {/* <button className="btn btn-outline-info" style={{textAlign:'center'}} onClick={generatePdf}> Exportar pedido</button> */}
         </div>
-        <div className="detalles">
+        <div className="producto">
           <div className="carrito__footer">
-            <button onClick={tooglefalse}> Ver mas productos </button>
+            <img src={carritox} width="90" height="50"/>
+            <button type="button" class="btn btn-secondary" onClick={tooglefalse}> Ver mas productos </button>
           </div>
           </div>
       </div>

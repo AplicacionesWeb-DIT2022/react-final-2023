@@ -12,12 +12,11 @@ export const ProductoItem = ({descripcion, tipo, precio, id}) => {
     <div key={id} className="producto">
       <Link to={`/producto/${id}`}>
       <div className="producto__img">
-        <img src={tipo} alt={descripcion} />
+        <img src={tipo} alt={descripcion} width="100" height="220"/>
       </div>
       </Link>
       <div className="producto__footer">
-        <h1>{descripcion}</h1>
-        {/* <p>{tipo}</p> */}
+      <h1>{descripcion}</h1>
         <p className="price">${precio} </p>
       </div>
       <div className="bottom">

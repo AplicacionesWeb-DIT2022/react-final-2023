@@ -66,21 +66,17 @@ export const ProductosDetalles = () => {
               </div>
             )}
           </div> */}
-
-          <div style={{textAlign:'center'}}>
-            <img src={sinimagen} width={128} height={128}/>
-          </div>
+          <h2>{detalle.descripcion}</h2>
         </div>
+
   }
-    <div className="productos">
-      {
+    <div className="productos">{
         productos.map((producto)=>{
-          if((item < 6)&&(detalle.tipo === producto.tipo)){
+          if((item < 6)&&(detalle.descripcion === producto.descripcion)){
             item++;
           return <ProductoItem 
           key={producto.id}
           title={producto.descripcion}
-          image={sinimagen}
           tipo={producto.tipo}
           precio={producto.precio}
           id={producto.id}

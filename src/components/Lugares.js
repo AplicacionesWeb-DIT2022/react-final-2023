@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import PuntoVenta from "../images/Punto-de-Venta.png";
+import PuntoVenta from "../images/lugares.png";
 import Button from 'react-bootstrap/Button';
 
 export const Lugares = () => {
+
+  
   const [datos, setDatos] = useState([]); // Estado para almacenar los datos de la API
   
   const fetch = require('node-fetch');
@@ -63,9 +65,15 @@ export const Lugares = () => {
               <p>
                 CP: { dato.CP}.
               </p>
+
+
             </Card.Text>
-            <a href='/lugares'>
+            <a href="https://goo.gl/maps/3e7DJYgL7NWrzXpdA" target="_blank">
+              <button type="button" class="btn btn-outline-success">🛰 Ver Ubicacion</button>
             </a>
+              
+
+
             </Card.Body>
         </Card>
         </>

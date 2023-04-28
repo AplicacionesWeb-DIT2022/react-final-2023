@@ -9,7 +9,7 @@
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 .App{
@@ -20,7 +20,8 @@ code {
     box-shadow: 0 2px 6px #08a05ca4;;
     padding: 0 15px;
     box-sizing: border-box;
-
+    /* background-image: url('./images/fondo1.png'); Ruta de la imagen de fondo */
+    /* background-size: cover;  */
 }
 /*-----------------INICIO-------------------*/
 .inicio{
@@ -160,6 +161,7 @@ header ul li a{
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 1rem 2rem;
+
 }
 .bottom .btn{
     border: none;
